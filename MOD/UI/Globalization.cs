@@ -9,7 +9,7 @@ namespace CSLMod.CSLMapView.Modding.UI {
     /// </summary>
     internal class Globalization {
         internal const string DEFAULT_LANGUAGE = "en";
-        private readonly string[] supportedLanguages = new[] { "en", "ja", "zh", "zh-tw", "fr", "ru" };
+        private readonly string[] supportedLanguages = new[] { "en", "ja", "zh", "zh-tw", "fr", "ru", "pl" };
         private Dictionary<string, Dictionary<StringKeys, string>> strings;
         /// <summary>
         /// 文字列のキー
@@ -73,6 +73,8 @@ namespace CSLMod.CSLMapView.Modding.UI {
             initFr( strings["fr"] );
             strings.Add( "ru", new Dictionary<StringKeys, string>() );
             initRu( strings["ru"] );
+            strings.Add( "pl", new Dictionary<StringKeys, string>() );
+            initRu( strings["pl"] );
         }
         private void initJa( Dictionary<StringKeys, string> dic ) {
             dic.Add( StringKeys.Export, "エクスポート" );
@@ -136,6 +138,19 @@ namespace CSLMod.CSLMapView.Modding.UI {
             dic.Add( StringKeys.Compress, "Архивировать .cslmap (в *.cslmap.gz)" );
             dic.Add( StringKeys.AddTimestampToFileName, "Добавить временную метку в имя файла" );
             dic.Add( StringKeys.AutoExportOnSave, "Автоэкспорт при сохранении игры" );
+        }
+        private void initPl( Dictionary<StringKeys, string> dic ) {
+            dic.Add( StringKeys.Export, "Wyeksportuj" );
+            dic.Add( StringKeys.ExportAndRun, "Wyeksportuj i uruchom przeglądarkę" );
+            dic.Add( StringKeys.DescLabelExeOutputPath, "Ścieżka do przeglądarki (będzie zainstalowana automatycznie)" );
+            dic.Add( StringKeys.DescLabelCslmapOutputPath, "Ścieżka wyjściowa pliku (*.cslmap)" );
+            dic.Add( StringKeys.FailedToExportMap, "Błąd przy eksportowaniu mapy." );
+            dic.Add( StringKeys.FailedToCopyFile, "Błąd przy kopiowaniu plików." );
+            dic.Add( StringKeys.NotInGame, "Mapa nie jest załadowana." );
+            dic.Add( StringKeys.FailedToRunViewer, $"Bład przy uruchamianiu {CSLMapView.VIEWER_EXE}" );
+            dic.Add( StringKeys.Compress, "Skompresuj .cslmap (utworzy *.cslmap.gz)" );
+            dic.Add( StringKeys.AddTimestampToFileName, "Dodaj sygnaturę czasową do nazwy pliku" );
+            dic.Add( StringKeys.AutoExportOnSave, "Automatyczny eksport przy zapisywaniu gry" );
         }
         /// <summary>
         /// デフォルト言語での文字列を取得します。
